@@ -1,3 +1,6 @@
+
+## webpack自己实现了require方法
+
 ## require.m 
     把modules对象赋给require.m属性
 
@@ -24,8 +27,15 @@
     指的是commonjsModule
 
 ## require.t
-    动态import、懒加载时候用到。
+    动态import、懒加载时候用到。把任意模块转为es6模块。
     mode: 模式
-    mode & 1 === true 说明value是一个模块id，引入这个模块
-    mode & 8 === true 说明value相当于一个require，直接返回value
-    mode & 4 === true 说明
+    mode & 1 === true 说明value是一个模块id，require引入这个模块
+    mode & 8|1 === true 说明value相当于一个require，直接返回value
+    mode & 4 === true 说明如果已经是ns对象了则直接返回
+    mode & 2 === true 如果不是ns对象，先创建一个ns对象。将value上的值拷贝到ns上
+
+## require.t 判断的时候为什么使用二进制？
+    1、为了性能，二进制操作是最快的 也是最节约内存的 二进制这种用法在权限、react中大量用到
+
+## 为社么使用mode&1这种方式？
+    因为这样可以减少写if else
