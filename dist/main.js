@@ -79,7 +79,7 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/  debugger;
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
@@ -90,11 +90,24 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const title = __webpack_require__(/*! ./title */ "./src/title.js");
-console.log(title);
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _title_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./title.js */ "./src/title.js");
+/* harmony import */ var _title_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_title_js__WEBPACK_IMPORTED_MODULE_0__);
+// const title = require('./title');
+// const commonModule = { name: 'zhufeng' };
+// const getter = require.name(commonModule);
+// console.log(getter.a);
+
+// const esModule = { __esModule: true, default: { name: 'zhufeng' } };
+// const getter2 = require.n(esModule);
+// console.log(getter2.a);
+
+
+console.log(_title_js__WEBPACK_IMPORTED_MODULE_0___default.a, _title_js__WEBPACK_IMPORTED_MODULE_0__["age"]);
 
 /***/ }),
 
@@ -105,7 +118,12 @@ console.log(title);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = 'title';
+module.exports = {
+    name: 'title_name',
+    age: 'title_age'
+};
+
+
 
 /***/ })
 
