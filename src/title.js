@@ -1,1 +1,5 @@
-module.exports = 'title';
+module.exports = {
+    name: 'title_name',
+    age: 'title_age'
+};
+
